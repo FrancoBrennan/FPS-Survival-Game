@@ -14,7 +14,7 @@ public class KraftAKick : MonoBehaviour
     public ControladorDeArmas controlador;
     public UpgradeText upgradeText;
     public bool botonApretado=false;
-    public MostrarBoton boton;
+    //public MostrarBoton boton;
     
 
     // Use this for initialization
@@ -60,11 +60,11 @@ public class KraftAKick : MonoBehaviour
         if (other.CompareTag("Player") && !controlador.Mejoro())
         {
             upgradeText.MostrarTexto();
-            boton.Mostrar();
+            //boton.Mostrar();
 
-            if (/*Input.GetKeyDown("e")*/ botonApretado == true && killsPantalla.GetComponent<Puntaje>().puntaje.valor >= KraftAKickPrice && !inUse && controlador.Mejoro() == false)
+            if (Input.GetKeyDown("e") /*botonApretado*/ == true && killsPantalla.GetComponent<Puntaje>().puntaje.valor >= KraftAKickPrice && !inUse && controlador.Mejoro() == false)
             {
-                boton.Quitar();
+                //boton.Quitar();
                 upgradeText.QuitarTexto();
 
                 TriggerEffects(true);
@@ -77,7 +77,7 @@ public class KraftAKick : MonoBehaviour
 
                 //if (controladorDeArmas != null)
                 //{
-                    // Llamar a la función en el "ControladorDeArmas"
+                    // Llamar a la funciï¿½n en el "ControladorDeArmas"
                     controlador.MejoraDeArma();
                 //}
                 botonApretado = false;
@@ -101,7 +101,7 @@ public class KraftAKick : MonoBehaviour
         {
             //showMysteryBoxGUI = false;
             upgradeText.QuitarTexto();
-            boton.Quitar();
+            //boton.Quitar();
 
         }
     }

@@ -9,7 +9,7 @@ public class JugPerkMachine : MonoBehaviour
     public Puntaje killsPantalla;
     GameManagement game;
     public PickUpText2 pickUpText;
-    public MostrarBoton boton;
+    //public MostrarBoton boton;
     public bool botonApretado=false;
 
     // Start is called before the first frame update
@@ -29,8 +29,8 @@ public class JugPerkMachine : MonoBehaviour
         if(other.CompareTag("Player") && !game.player1HasJug)
         {
             pickUpText.MostrarTexto();
-            boton.Mostrar();
-            if(/*Input.GetKeyDown("e")*/ botonApretado == true && killsPantalla.GetComponent<Puntaje>().puntaje.valor >= jugPerkPrice)
+            //boton.Mostrar();
+            if(Input.GetKeyDown("e") /*botonApretado*/ == true && killsPantalla.GetComponent<Puntaje>().puntaje.valor >= jugPerkPrice)
             {
                 killsPantalla.GetComponent<Puntaje>().puntaje.valor -= jugPerkPrice;
                 game.player1HasJug = true;
@@ -40,7 +40,7 @@ public class JugPerkMachine : MonoBehaviour
                 other.SendMessage("GivePlayerPerk", "Jug");
 
                 pickUpText.QuitarTexto();
-                boton.Quitar();
+                //boton.Quitar();
                 botonApretado = false;
             }
         }
@@ -63,7 +63,7 @@ public class JugPerkMachine : MonoBehaviour
             //showMysteryBoxGUI = false;
             
             pickUpText.QuitarTexto();
-            boton.Quitar();
+            //boton.Quitar();
 
         }
     }

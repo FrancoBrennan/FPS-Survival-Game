@@ -10,7 +10,7 @@ public class DoubleTapPerkMachine : MonoBehaviour
     public Puntaje killsPantalla;
     public ControladorDeArmas controlador;
     public PickUpText2 texto;
-    public MostrarBoton boton;
+    //public MostrarBoton boton;
     public bool botonApretado=false;
     
 
@@ -32,9 +32,9 @@ public class DoubleTapPerkMachine : MonoBehaviour
         if (other.CompareTag("Player") && !controlador.Tomo())
         {
             texto.MostrarTexto();
-            boton.Mostrar();
+            //boton.Mostrar();
 
-            if (/*Input.GetKeyDown("e")*/ botonApretado == true && killsPantalla.GetComponent<Puntaje>().puntaje.valor >= DoubleTapPerkPrice && controlador.Tomo() == false)
+            if (Input.GetKeyDown("e") /*botonApretado == true*/ && killsPantalla.GetComponent<Puntaje>().puntaje.valor >= DoubleTapPerkPrice && controlador.Tomo() == false)
             {
                 killsPantalla.GetComponent<Puntaje>().puntaje.valor -= DoubleTapPerkPrice;
 
@@ -44,10 +44,10 @@ public class DoubleTapPerkMachine : MonoBehaviour
 
                 //if (controladorDeArmas != null)
                 //{
-                    // Llamar a la función en el "ControladorDeArmas"
+                    // Llamar a la funciï¿½n en el "ControladorDeArmas"
                 controlador.GiveGunDoubleTap();
                 texto.QuitarTexto();
-                boton.Quitar();
+                //boton.Quitar();
                 botonApretado = false;
                 //}
             }
@@ -71,7 +71,7 @@ public class DoubleTapPerkMachine : MonoBehaviour
             //showMysteryBoxGUI = false;
 
             texto.QuitarTexto();
-            boton.Quitar();
+            //boton.Quitar();
 
 
 

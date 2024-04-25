@@ -24,8 +24,8 @@ public class MysteryBoxScript : MonoBehaviour {
     public OpenBoxText openBoxText;
 
 	public bool botonApretado=true;
-	public MostrarBoton botonComprar;
-	public MostrarBoton botonCambiarArma;
+	//public MostrarBoton botonComprar;
+	//public MostrarBoton botonCambiarArma;
 
     // Use this for initialization
     void Start() {
@@ -147,22 +147,22 @@ public class MysteryBoxScript : MonoBehaviour {
 			
 			if(!boxIsOpen) {
 				openBoxText.MostrarTexto();
-				botonComprar.Mostrar();
+				//botonComprar.Mostrar();
             }
 
-			if(/*Input.GetKeyDown("e")*/ botonApretado==true && killsPantalla.GetComponent<Puntaje>().puntaje.valor >= mysteryBoxPrice && !boxIsOpen && !openBox)
+			if(Input.GetKeyDown("e") /*botonApretado==true*/ && killsPantalla.GetComponent<Puntaje>().puntaje.valor >= mysteryBoxPrice && !boxIsOpen && !openBox)
 			{
 				openBoxText.QuitarTexto();
-                botonComprar.Quitar();
+                //botonComprar.Quitar();
                 openBox = true;
                 killsPantalla.GetComponent<Puntaje>().puntaje.valor -= mysteryBoxPrice;
-				botonCambiarArma.Mostrar();
+				//botonCambiarArma.Mostrar();
 				pickUpText.MostrarTexto();
 				botonApretado = false;
             }
 
-			if(canTakeWeapon && /*Input.GetKeyDown("e")*/ botonApretado==true) {
-                botonCambiarArma.Quitar();
+			if(canTakeWeapon && Input.GetKeyDown("e") /*botonApretado==true*/) {
+                //botonCambiarArma.Quitar();
 				pickUpText.QuitarTexto();
                 ControladorDeArmas controlador = FindObjectOfType<ControladorDeArmas>();
 
@@ -184,7 +184,7 @@ public class MysteryBoxScript : MonoBehaviour {
 			if (canTakeWeapon)
 			{
                 pickUpText.MostrarTexto();
-                botonCambiarArma.Mostrar();
+                //botonCambiarArma.Mostrar();
             }
 		}
     }
@@ -203,8 +203,8 @@ public class MysteryBoxScript : MonoBehaviour {
 		if (other.CompareTag("Player"))
 		{
             //showMysteryBoxGUI = false;
-			botonCambiarArma.Quitar();
-            botonComprar.Quitar();
+			//botonCambiarArma.Quitar();
+            //botonComprar.Quitar();
 			pickUpText.QuitarTexto();
 			openBoxText.QuitarTexto();
 

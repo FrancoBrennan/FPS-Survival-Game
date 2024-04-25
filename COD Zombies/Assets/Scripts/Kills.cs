@@ -13,7 +13,7 @@ public class Puntaje : MonoBehaviour
     void Start()
     {
         valor = 0;
-        puntaje.valor = 15000;
+        puntaje.valor = 0;
     }
 
     // Update is called once per frame

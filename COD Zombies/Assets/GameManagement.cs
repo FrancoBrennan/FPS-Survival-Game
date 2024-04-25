@@ -6,8 +6,8 @@ using UnityEngine;
 public class GameManagement : MonoBehaviour
 {
     public int round = 1;
-    int zombiesInRound = 10;
-    public int zombiesLeftInRound = 10;
+    int zombiesInRound = 25;
+    public int zombiesLeftInRound = 25;
     int zombiesSpawnedInRound = 0;
     float zombieSpawnTimer = 0;
     public Transform[] zombieSpawnPoints;
@@ -16,6 +16,7 @@ public class GameManagement : MonoBehaviour
     public bool player1HasJug = false;
     public LogicaJugador jugador;
     bool terminarJuego;
+    public PantallaTimeRemaining PantallaTimeRemaining;
 
     float countDown = 0;
 
@@ -32,6 +33,8 @@ public class GameManagement : MonoBehaviour
         {
             if (zombiesSpawnedInRound < zombiesInRound && countDown == 0)
             {
+                PantallaTimeRemaining.QuitarTexto();
+
                 if (zombieSpawnTimer > tiempo)
                 {
                     SpawnZombie();
@@ -82,8 +85,12 @@ public class GameManagement : MonoBehaviour
         else
         {
             countDown = 15;
-            zombiesInRound = zombiesLeftInRound += 10;
+            PantallaTimeRemaining.MostrarTexto();
+
+            zombiesInRound *= 2;
+            zombiesLeftInRound=zombiesInRound;
             zombiesSpawnedInRound = 0;
+
             round++;
             tiempo--;
         }
@@ -94,5 +101,10 @@ public class GameManagement : MonoBehaviour
     public int getRound()
     {
         return round;
+    }
+
+    public float getCountDown()
+    {
+        return this.countDown;
     }
 }

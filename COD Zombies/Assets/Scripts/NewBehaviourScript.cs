@@ -74,7 +74,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         if (modoDeDisparo == ModoDeDisparo.FullAuto && Input.GetButton("Fire1"))
         {
             RevisarDisparo();
@@ -83,7 +83,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             RevisarDisparo();
         }
-        */
+        
         
 
         if (disparoAuto == true)
@@ -97,7 +97,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         
-        /*
+        
         if (Input.GetMouseButton(1)) // El 1 hace referencia al click derecho y 0 al click izquierdo
         {
             //Esto lo que hace es que al presionar click derecho transforme la posici�n del arma
@@ -114,7 +114,7 @@ public class NewBehaviourScript : MonoBehaviour
             estaADS = false;
         }
 
-        */
+        
 
         if (estaADS == false)
         {
@@ -193,6 +193,41 @@ public class NewBehaviourScript : MonoBehaviour
         {
             if (hit.transform.CompareTag("Enemigo"))
             {
+
+                float dañoInfligido = daño; // Por defecto, el daño es el normal
+
+                // Verificar si el arma es una escopeta, un subfusil o una MP5
+                if (gameObject.name == "DefenderShotgun" || gameObject.name == "Compact9mm" || gameObject.name == "UMP45")
+                {
+                    // Obtener la distancia entre el jugador y el enemigo
+                    float distancia = Vector3.Distance(transform.position, hit.transform.position);
+
+                    // Calcular un factor de reducción de daño basado en la distancia
+                    float factorDeReduccion = 1f; // Por defecto, no hay reducción de daño
+
+                    // Aquí puedes ajustar los valores según tu preferencia
+                    if (distancia > 10f) // Por ejemplo, si la distancia es mayor a 10 unidades, se reduce el daño
+                    {
+                        if(gameObject.name == "DefenderShotgun")
+                        {
+                            factorDeReduccion = 0.5f; // Reducir el daño a la mitad
+                        }
+                        else
+                        {
+                            factorDeReduccion = 0.75f; // Reducir el daño a 3/4
+                        }
+                        
+                    }
+                    else if (distancia > 5f && gameObject.name == "DefenderShotgun") // Otra distancia para aplicar otra reducción
+                    {
+                        factorDeReduccion = 0.75f; // Reducir el daño a 3/4
+                    }
+
+                    // Aplicar el factor de reducción al daño que se va a infligir al enemigo
+                    dañoInfligido = daño * factorDeReduccion;
+                }
+
+                // Aplicar el daño modificado
                 Vida vida = hit.transform.GetComponent<Vida>();
                 if (vida == null)
                 {
@@ -200,7 +235,7 @@ public class NewBehaviourScript : MonoBehaviour
                 }
                 else
                 {
-                    vida.RecibirDaño(daño);
+                    vida.RecibirDaño((int)dañoInfligido);
                     CrearEfectoDaño(hit.point, hit.transform.rotation);
                 }
             }
@@ -365,11 +400,11 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void DispararArma()
     {
-        if (modoDeDisparo == ModoDeDisparo.FullAuto /*&& Input.GetButton("Fire1")*/)
+        if (modoDeDisparo == ModoDeDisparo.FullAuto && Input.GetButton("Fire1"))
         {
             RevisarDisparo();
         }
-        else if (modoDeDisparo == ModoDeDisparo.SemiAuto /*&& Input.GetButtonDown("Fire1")*/)
+        else if (modoDeDisparo == ModoDeDisparo.SemiAuto && Input.GetButtonDown("Fire1"))
         {
             RevisarDisparo();
         }

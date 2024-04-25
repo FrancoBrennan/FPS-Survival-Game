@@ -14,7 +14,7 @@ public class LogicaJugador : MonoBehaviour
     public GameObject perder;
     public Puntaje puntaje;
     public float tiempoParaRegenerar = 10f;  // Tiempo que tarda en regenerarse completamente (en segundos)
-    public float cantidadDeRegeneracionPorSegundo = 5f;  // Cuánto se regenera por segundo
+    public float cantidadDeRegeneracionPorSegundo = 5f;  // Cuï¿½nto se regenera por segundo
     private float tiempoUltimoAtaque = 0f;
     bool canRepairWall;
     float rebuildTimer = 0;
