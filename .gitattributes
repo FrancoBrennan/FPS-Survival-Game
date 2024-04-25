@@ -15,3 +15,4 @@ COD[[:space:]]Zombies/Library/Artifacts/64/64e782f56dc710668b080015df37890f filt
 Versión filter=lfs diff=lfs merge=lfs -text
 PC/COD filter=lfs diff=lfs merge=lfs -text
 Zombies_Data/sharedassets0.assets.resS” filter=lfs diff=lfs merge=lfs -text
+Ejecutable[[:space:]]Versión[[:space:]]PC/COD[[:space:]]Zombies_Data/sharedassets0.assets.resS filter=lfs diff=lfs merge=lfs -text
