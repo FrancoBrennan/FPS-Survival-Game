@@ -11,3 +11,7 @@ COD[[:space:]]Zombies/Library/Bee/Android/Prj/Mono2x/Gradle/unityLibrary/build/i
 COD[[:space:]]Zombies/Library/PlayerDataCache/Win64/Data/sharedassets0.assets.resS filter=lfs diff=lfs merge=lfs -text
 COD[[:space:]]Zombies/Library/Artifacts/f0/f0f4b333af65eeef334f86224e2aaf8d filter=lfs diff=lfs merge=lfs -text
 COD[[:space:]]Zombies/Library/Artifacts/64/64e782f56dc710668b080015df37890f filter=lfs diff=lfs merge=lfs -text
+“Ejecutable filter=lfs diff=lfs merge=lfs -text
+Versión filter=lfs diff=lfs merge=lfs -text
+PC/COD filter=lfs diff=lfs merge=lfs -text
+Zombies_Data/sharedassets0.assets.resS” filter=lfs diff=lfs merge=lfs -text
