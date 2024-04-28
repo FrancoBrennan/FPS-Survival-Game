@@ -1,104 +1,77 @@
-Desarrollé este videojuego para una materia de la facultad llamada "Trabajo de Campo". La materia consistía en llevar a cabo un proyecto a nuestro gusto de manera autodidacta.
+# Call of Duty Zombies Replica
 
-Objetivo:
-El objetivo de este proyecto es la realización de una aplicación móvil que consiste en un videojuego el cual se encuentre dentro de las categorías de Supervivencia, Estrategia y Disparos. 
-Justificación:
-Mediante una combinación de estas categorías se aspira a crear una experiencia cautivadora para los usuarios de dispositivos móviles. Además, les proporcionará a los jugadores una mejor capacidad de pensamiento estratégico a la hora de elegir una acción.
-Límites:
-Desde: El comienzo del juego en la Ronda 1.
-Hasta: Terminar la Ronda 3.
-Estado inicial del juego: Primer Ronda, el jugador aparece en el Hangar y los zombies empiezan a generarse en distintos punto del Hangar.
-Estado final del juego: Ronda 3 completada, el jugador gana o, antes de esto el jugador pierde al ser eliminado por un zombie.
-Alcance:
-Lo que hará:
--	Permitir desplazarse libremente por el Hangar.
--	Apuntar, disparar y recargar el arma.
--	Generar oleadas de zombies que aumenten en cantidad y dificultad a medida que avanza el juego.
--	Mostrar en pantalla un contador de la vida del jugador, de las balas restantes del arma y del dinero.
--	Crear un sistema de dinero donde el jugador ganará dinero por eliminar zombies.
--	Adquirir armas a través de una “Caja Misteriosa” a cambio de dinero.
--	Permitir el uso de bebidas especiales que le otorguen ventajas al jugador a cambio de dinero.
--	Regenerar la vida del jugador si no es atacado durante 10 segundos.
--	Permitir la mejora de armas a través de una maquina a cambio de dinero.
-Lo que no hará:
--	Permitir salir del Hangar.
--	Modo multijugador.
+I developed this video game for a course at the university called "Field Work." The course involved carrying out a self-directed project according to our preferences.
 
-Estrategia del juego:
+## Objective
+The objective of this project is to create a mobile application consisting of a video game within the categories of Survival, Strategy, and Shooter.
 
--	Estrategia Central:
+## Justification
+By combining these categories, we aim to create a captivating experience for mobile device users. Additionally, it will provide players with better strategic thinking skills when choosing an action.
 
-El videojuego se centra en la supervivencia del jugador ante oleadas de zombies que aparecerán en distintos puntos de un Hangar que representará el mapa del juego. El objetivo es eliminar a los zombies para mantenerse a salvo.
+## Limits
+- **From:** The start of the game in Round 1.
+- **To:** Finishing Round 3.
+- **Initial State of the Game:** First Round, the player appears in the Hangar, and zombies begin to generate at different points of the Hangar.
+- **Final State of the Game:** Round 3 completed; the player wins, or before this, the player loses by being eliminated by a zombie.
 
--	Jugador: El jugador iniciará el juego con un valor de vida de 100 que podrá disminuir a través de los ataques de los zombies.
+## Scope
+### What it will do
+- Allow free movement around the Hangar.
+- Aim, shoot, and reload the weapon.
+- Generate waves of zombies that increase in quantity and difficulty as the game progresses.
+- Display on-screen counters for player life, remaining bullets, and money.
+- Create a money system where the player earns money for eliminating zombies.
+- Acquire weapons through a "Mystery Box" in exchange for money.
+- Allow the use of special drinks that give advantages to the player in exchange for money.
+- Regenerate the player's life if not attacked for 10 seconds.
+- Allow weapon upgrades through a machine in exchange for money.
 
--	Regeneración de Vida del Jugador:
+### What it won't do
+- Allow exiting the Hangar.
+- Multiplayer mode.
 
-La vida del jugador se regenerará automáticamente si no es atacado durante 10 segundos. Esto permite una breve recuperación estratégica de la vida.
+## Game Strategy
+### Central Strategy
+The game focuses on the player's survival against waves of zombies that will appear at different points of a Hangar representing the game map. The goal is to eliminate the zombies to stay safe.
 
--	Interfaz de Usuario del Jugador: En la Interfaz de Usuario del Jugador se tiene:
+### Player
+The player will start the game with a life value of 100, which can decrease through zombie attacks.
 
-	Contador de dinero acumulado.
-	Número de Ronda.
-	Botones para disparar, recargar, apuntar, saltar y moverse.
-	Un icono del arma que esté utilizando el Jugador junto con sus balas en el cargador y balas restantes.
-	Un punto de mira en el centro de la pantalla.
-	Un contador de FPS (Frames por Segundo).
+### Player Life Regeneration
+The player's life will automatically regenerate if not attacked for 10 seconds, allowing for a brief strategic life recovery.
 
+### Player User Interface
+The Player User Interface includes:
+- Accumulated money counter.
+- Round number.
+- Buttons for shooting, reloading, aiming, jumping, and moving.
+- An icon of the weapon the player is using along with its bullets in the magazine and remaining bullets.
+- A crosshair in the center of the screen.
+- An FPS (Frames per Second) counter.
 
--	Armas y equipamiento:
+### Weapons and Equipment
+At the start of the game, the player will have a revolver. The only way to obtain new weapons is by purchasing the "Mystery Box," which will provide a random weapon in exchange for money. Regarding ammunition, the ways to reload the complete ammunition are by buying the "Mystery Box" and exchanging the weapon without ammunition. There are 4 types of weapons:
+- Pistol
+- Submachine Gun
+- Rifle
+- Shotgun
+- Mystery Box
 
-Al inicio del juego el jugador tendrá un revolver. La única forma para obtener nuevas armas es comprando la “caja misteriosa” que otorgará un arma aleatoria a cambio de dinero. En cuanto a la munición, las formas de recargar la munición completa son comprando la “caja misteriosa” e intercambiar de esa manera el arma sin munición. Existen 4 tipos de armas:
+### Headshot Damage Multiplier
+When shooting a zombie in the head, the damage dealt by the weapon per shot will be doubled.
 
-	Pistola:
+### Weapon Upgrades
+You can access a machine that will allow you to upgrade your current weapon in exchange for $3500. This upgrade will increase the damage and firing speed of your weapon by 50%, which will be important in higher rounds.
 
-	Revolver: Disparo semi-automático. Daño por disparo de 50 de vida. Velocidad de disparo de 0.6 segundos. 6 balas por cargador y 60 balas en total.
-	Pistola 9mm: Disparo automático. Daño por disparo de 20 de vida. Velocidad de disparo de 0.3 segundos. 12 balas por cargador y 120 balas en total.
+### Zombies
+Zombies will be generated automatically at different points in the Hangar. Based on the round in which the game is, they will have different attributes.
 
-	Subfusil:
+### Vending Machines
+You can use vending machines found in the Hangar, which offer special drinks that will give you advantages in the game, such as increased life and firing speed. To obtain these drinks, you must redeem a certain amount of money depending on the machine.
 
-	UMP45: Disparo automático. Daño por disparo de 20 de vida. Velocidad de disparo de 0.15 segundos. 20 balas en el cargador y 140 balas en el total. A mayor distancia de disparo se reduce su daño.
-	Mini-subfusil: Disparo automático. Daño por disparo de 10 de vida. Velocidad de disparo de 0.1 segundos. 15 balas por cargador y 90 balas en total. A mayor distancia de disparo se reduce su daño.
+### Money Accumulation
+Each zombie elimination will give you $150. This money can be accumulated and used to buy weapons through the mystery box, access special drinks, or upgrade a weapon.
 
-	Fusil:
+### Progressive Difficulty
+The game consists of rounds. As the player advances in the rounds, the quantity and resistance of the zombies will increase, thus causing greater difficulty in surviving.
 
-	AK-47: Disparo automático. Daño por disparo de 40 de vida. Velocidad de disparo de 0.3 segundos. 30 balas por cargador y 180 balas en total.
-
-	Escopeta:
-
-	Remington: Disparo semi-automático. Daño por disparo de 75 de vida. Velocidad de disparo de 1.2 segundos. 8 balas por cargador y 32 balas en total. A mayor distancia de disparo se reduce su daño.
-
-	Caja Misteriosa: Te permite comprar un arma al azar de las mencionadas con anterioridad a cambio de $950.
-
--	Duplicador de daño a la cabeza: El jugador al dispararle al zombie en la cabeza duplicará por dos el daño que tenga el arma por disparo.
-
--	Mejoras de armas:
-
-Podrás acceder a una máquina la cual te permitirá mejorar tu arma actual a cambio de $3500. Esta mejora incrementará el daño y velocidad de disparo de tu arma un 50%, lo cual será importante en rondas altas.
-
--	Zombies:
-
-Los zombies se generarán automáticamente en distintos puntos del Hangar. En base a la ronda en el que se encuentre el juego tendrán distintos atributos:
-
-	Ronda 1: 100 de vida y le quitaran 15 de vida al jugador por ataque.
-	Ronda 2: 150 de vida y le quitaran 20 de vida al jugador por ataque.
-	Ronda 3: 200 de vida y le quitaran 30 de vida al jugador por ataque.
-
--	Máquinas expendedoras:
-
-Podrás hacer uso de máquinas expendedoras que se encuentren en el Hangar, las cuales ofrecen bebidas especiales que te otorgarán ventajas en el juego como mayor vida y velocidad de disparo. Para obtener estas bebidas deberás canjear una cierta cantidad de dinero dependiendo de la máquina.
-
-	Máquina de vida: Te permite comprar una bebida que te duplica la vida a un valor de 200 a cambio de $3000. Se podrá canjear una única vez.
-
-	Máquina para disparar más rápido: Te permite comprar una bebida que te incrementa en un 50% la velocidad de disparo que tenga el arma que estés utilizando a cambio de $3500. Se podrá canjear una única vez por arma que se esté utilizando.
-
--	Acumulación de dinero:
-
-Cada eliminación de un zombie te dará $150. Este dinero puede ser acumulado y usado para comprar armas a través de la caja misteriosa, para acceder a las bebidas especiales o para mejorar un arma.
-
--	Dificultad progresiva:
-
-El juego consiste en rondas. A medida que el Jugador avanza en los rondas la cantidad y resistencia de los zombies aumentará, provocando así una mayor dificultad para sobrevivir. Cantidad de zombies por ronda:
-	Ronda 1: 25 zombies.
-	Ronda 2: 50 zombies.
-	Ronda 3: 100 zombies.
