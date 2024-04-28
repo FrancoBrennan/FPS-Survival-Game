@@ -302,33 +302,85 @@ public class NewBehaviourScript : MonoBehaviour
         
     }
 
+    /*
     IEnumerator RecargarDefenderShotgun()
     {
         
 
         while (balasEnCartucho < tamañoDeCartucho && balasRestantes > 0)
         {
-            animator.CrossFadeInFixedTime("ReloadInsert", 0.1f);
-            balasEnCartucho++;
-            balasRestantes--;
-            yield return new WaitForSeconds(1f); // Ajusta el tiempo entre cada recarga
+            if (!Input.GetButtonDown("Fire1"))
+            {
+                animator.CrossFadeInFixedTime("ReloadInsert", 0.1f);
+                balasEnCartucho++;
+                balasRestantes--;
+                yield return new WaitForSeconds(1f); // Ajusta el tiempo entre cada recarga
+            }
+            else
+            {
+                break;
+            }
+            
         }
 
         
         recargando = false;
     }
 
+    */
+
+    IEnumerator RecargarDefenderShotgun()
+    {
+        while (balasEnCartucho < tamañoDeCartucho && balasRestantes > 0)
+        {
+            animator.CrossFadeInFixedTime("ReloadInsert", 0.1f);
+            balasEnCartucho++;
+            balasRestantes--;
+
+            // Esperar un cuadro para detectar la entrada de disparo
+            yield return null;
+
+            // Si se presiona el botón de disparo, cancelar la recarga y disparar
+            if (Input.GetMouseButton(0))
+            {
+                CancelarRecarga();
+                yield break; // Salir del bucle
+            }
+
+            yield return new WaitForSeconds(1f); // Ajusta el tiempo entre cada recarga
+        }
+
+        // Aquí se ejecuta el código al finalizar la recarga
+        recargando = false;
+    }
+
+    void CancelarRecarga()
+    {
+        StopAllCoroutines(); // Detener todas las corutinas de recarga
+        recargando = false;
+    }
+
+
     void RecargarMuniciones()
     {
-        int balasParaRecargar = tamañoDeCartucho - balasEnCartucho;
-        int restarBalas = (balasRestantes >= balasParaRecargar) ? balasParaRecargar : balasRestantes;
+        //int balasParaRecargar = tamañoDeCartucho - balasEnCartucho;
+        //int restarBalas = (balasRestantes >= balasParaRecargar) ? balasParaRecargar : balasRestantes;
         //Es como un IF, si balas restantes es mayor igual que las balas para recargar el restar balas se vuelve el balas para recargar.
         // Sino, si es menor el restar balas se vuelve balas restantes.
         //El ? lo convierte en un IF, y los : es el ELSE.
 
+        int balasParaRecargar = tamañoDeCartucho - balasEnCartucho;
 
+        // Calcular cuántas balas se pueden recargar
+        int restarBalas = Mathf.Min(balasRestantes, balasParaRecargar);
+
+        // Añadir las balas recargadas al cargador y restarlas de las balas restantes
         balasRestantes -= restarBalas;
-        balasEnCartucho += balasParaRecargar;
+        balasEnCartucho += restarBalas;
+
+
+        //balasRestantes -= restarBalas;
+        //balasEnCartucho += balasParaRecargar;
     }
 
     public void DesenfundarOn()
