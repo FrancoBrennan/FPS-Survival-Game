@@ -55,7 +55,6 @@ At the start of the game, the player will have a revolver. The only way to obtai
 - Submachine Gun
 - Rifle
 - Shotgun
-- Mystery Box
 
 ### Headshot Damage Multiplier
 When shooting a zombie in the head, the damage dealt by the weapon per shot will be doubled.
