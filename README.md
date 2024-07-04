@@ -1,6 +1,6 @@
 # Call of Duty Zombies Replica
 
-I developed this video game for a course at the university called "Field Work." The course involved carrying out a self-directed project according to our preferences.
+I developed this video game for a course at the university called "Trabajo de Campo" The course involved carrying out a self-directed project according to our preferences.
 
 ## Objective
 The objective of this project is to create a mobile application consisting of a video game within the categories of Survival, Strategy, and Shooter.
